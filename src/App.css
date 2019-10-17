@@ -20,3 +20,34 @@
 .App-link {
   color: #09d3ac;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.input {
+  margin-left: 10px;
+  font: inherit;
+  outline: none;
+  border: 1.5px solid transparent;
+  transition: 0.3s all ease-in-out;
+}
+
+.input:focus {
+  border-color: #cccccc;
+}
+
+.error {
+  position: fixed;
+  top: -100%;
+  transition: 1s all ease-in-out;
+}
+
+.error.shown {
+  top: 0;
+}
