@@ -19,10 +19,10 @@ export default class Title extends Component {
 
   render() {
     return (
-      <div className="title">
-        Project:
+      <>
+        <h1 className="title">Project</h1>
         <input value={this.state.title} onChange={this.handleTitleChange} />
-      </div>
+      </>
     );
   }
 }

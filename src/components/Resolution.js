@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import TooSmall from "./TooSmall";
+import TooLarge from "./TooLarge";
+import Super from "./Super";
+
 class Media extends Component {
   state = {
     matches: window.matchMedia(this.props.query).matches
@@ -47,10 +51,9 @@ export default class Resolution extends Component {
           <Media query="(min-width: 600px)">
             {tooLarge => (
               <div>
-                <h2>Media</h2>
-                <p>{tooSmall && "You wont see anything, go wider!"}</p>
-                <p>{tooLarge && "You dont need so space, go narrower!"}</p>
-                <p>{!tooSmall && !tooLarge && "Now it's super!"}</p>
+                {tooSmall && <TooSmall />}
+                {tooLarge && <TooLarge />}
+                {!tooSmall && !tooLarge && <Super />}
               </div>
             )}
           </Media>

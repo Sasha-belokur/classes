@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+
+import Error from "./Error";
 
 export default class Estimate extends Component {
   constructor(props) {
@@ -18,12 +21,7 @@ export default class Estimate extends Component {
       this.setState({ toliks: this.state.toliks + 1 });
       this.setState({ error: null });
     } else {
-      this.setState({
-        error: {
-          image: "much",
-          message: "Less than 10 please :0"
-        }
-      });
+      this.setState({ error: "much" });
     }
   }
 
@@ -32,32 +30,17 @@ export default class Estimate extends Component {
       this.setState({ toliks: this.state.toliks - 1 });
       this.setState({ error: null });
     } else {
-      this.setState({
-        error: {
-          image: "little",
-          message: "More than 1 please :C"
-        }
-      });
+      this.setState({ error: "little" });
     }
   }
 
   render() {
     return (
-      <div>
+      <div className="estimate">
+        <FaPlusCircle onClick={this.handleIncrease} />
         Estimate: {this.state.toliks} Toliks
-        <button onClick={this.handleIncrease}>+</button>
-        <button onClick={this.handleDecrease}>-</button>
-        <div className={["error", this.state.error && "shown"].join(" ")}>
-          {this.state.error && (
-            <>
-              <img
-                src={require(`../images/${this.state.error.image}.jpg`)}
-                alt="Error notification"
-              />
-              {this.state.error.message}
-            </>
-          )}
-        </div>
+        <FaMinusCircle onClick={this.handleDecrease} />
+        <Error error={this.state.error} />
       </div>
     );
   }

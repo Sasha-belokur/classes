@@ -1,53 +1,125 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 70px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  position: relative;
+  margin: 0;
+  padding: 10px 15px;
   font-size: 30px;
-  line-height: 1.5;
+  text-transform: uppercase;
 }
 
-.input {
+.title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 3px;
+  transform: translate(-50%);
+  background: red;
+  z-index: -10;
+}
+
+input {
+  font-size: 30px;
   margin-left: 10px;
-  font: inherit;
+  color: inherit;
   outline: none;
-  border: 1.5px solid transparent;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
   transition: 0.3s all ease-in-out;
+  text-align: center;
 }
 
-.input:focus {
-  border-color: #cccccc;
+input:focus {
+  background-color: #c9faef;
 }
 
 .error {
   position: fixed;
-  top: -100%;
-  transition: 1s all ease-in-out;
+  top: 40%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 500px;
+  padding-top: 30px;
+  transform: translate(-50%);
 }
 
-.error.shown {
+.error-enter {
+  left: -1000px;
+}
+.error-enter-active {
+  left: 50%;
+  transition: left 1s;
+}
+.error-exit {
+  left: 50%;
+}
+.error-exit-active {
+  left: -1000px;
+  transition: left 1s;
+}
+
+.error img {
+  max-width: 100%;
+}
+
+.error span {
+  position: absolute;
   top: 0;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.notification {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: #0aca9f;
+  margin: 0 10px;
+  animation: slide 400ms linear alternate infinite;
+}
+
+.fire {
+  color: #e25822;
+}
+
+@keyframes slide {
+  from {
+    margin: 0 10px;
+  }
+
+  to {
+    margin: 0 20px;
+  }
+}
+
+.estimate {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.estimate svg {
+  cursor: pointer;
+  color: #7e92f6;
+  margin: 0 10px;
 }
