@@ -17,6 +17,14 @@ class Title extends Component {
     });
   }
 
+  componentDidMount() {
+    document.title = this.state.title;
+  }
+
+  componentDidUpdate() {
+    document.title = this.state.title;
+  }
+
   render() {
     return (
       <>
