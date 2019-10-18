@@ -5,7 +5,7 @@ const TooSmall = () => {
   return (
     <p className="notification">
       <FaAngleDoubleRight className="icon" />
-      "Go narrower!"
+      "Go closer!"
       <FaAngleDoubleLeft className="icon" />
     </p>
   );
