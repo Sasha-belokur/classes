@@ -43,7 +43,7 @@ class Media extends Component {
   }
 }
 
-export default class Resolution extends Component {
+class Resolution extends Component {
   render() {
     return (
       <Media query="(max-width: 500px)">
@@ -62,3 +62,5 @@ export default class Resolution extends Component {
     );
   }
 }
+
+export default Resolution;

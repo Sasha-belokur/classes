@@ -3,7 +3,7 @@ import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 import Error from "./Error";
 
-export default class Estimate extends Component {
+class Estimate extends Component {
   constructor(props) {
     super(props);
 
@@ -45,3 +45,5 @@ export default class Estimate extends Component {
     );
   }
 }
+
+export default Estimate;
